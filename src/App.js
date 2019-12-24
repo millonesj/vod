@@ -12,9 +12,9 @@ const theme = createMuiTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-    <div className="App">
-      <MainLayout/>
-    </div>
+      <div className="App">
+        <MainLayout />
+      </div>
     </ThemeProvider>
   );
 }
