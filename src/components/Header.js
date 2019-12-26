@@ -15,6 +15,7 @@ const useStyles = makeStyles(theme => ({
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
+    backgroundColor: '#FFFFFF',
     transition: theme.transitions.create(['width', 'margin'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
@@ -41,10 +42,10 @@ export default function Header() {
         <Toolbar className={classes.toolbar}>
           <img src={logo} alt="logo krowdy" />
           <div>
-            <Typography variant="title" color="inherit" noWrap>
+            <Typography variant="title" color="textSecondary" noWrap>
               Walther Ayala
             </Typography>
-            <IconButton color="inherit">
+            <IconButton color="default">
               <Avatar alt="Remy Sharp" src={avatar} />
             </IconButton>
           </div>
