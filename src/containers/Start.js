@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Toolbar from '../components/Toolbar';
+import Toolbar from '../containers/Toolbar';
 import BaseContent from '../components/BaseContent';
 
 const drawerWidth = 240;

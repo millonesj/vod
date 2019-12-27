@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import ProgressQuestion from './ProgressQuestion';
+import ProgressQuestion from '../components/ProgressQuestion';
 import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles(theme => ({
