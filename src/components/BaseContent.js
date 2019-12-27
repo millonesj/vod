@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import ViewModuleIcon from '@material-ui/icons/ViewModule';
 import Button from '@material-ui/core/Button';
+import CardQuestion from './CardQuestion';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -67,7 +68,9 @@ const Toolbar = () => {
           </div>
         </div>
       </Grid>
-      <Grid item xs={12} className={classes.content}></Grid>
+      <Grid item xs={12} className={classes.content}>
+        <CardQuestion />
+      </Grid>
     </Grid>
   );
 };
