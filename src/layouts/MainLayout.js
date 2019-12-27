@@ -3,19 +3,24 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
+import Start from '../containers/Start';
 
-const drawerWidth = 240;
+const drawerWidth = 72;
 
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex'
   },
   content: {
-    flexGrow: 1,
-    marginLeft: theme.spacing.unit * 9,
-    padding: theme.spacing.unit * 3,
-    marginTop: theme.spacing.unit * 7,
-    overflowX: 'hidden'
+    flexGrow: 1
+  },
+  toolbar: {
+    display: 'flex',
+    height: theme.spacing(9),
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: theme.spacing(2),
+    ...theme.mixins.toolbar
   },
   contentShift: {
     marginLeft: drawerWidth,
@@ -42,7 +47,9 @@ const MainLayout = props => {
       <div>
         <Header handleToggleDrawer={handleToggleDrawer} />
         <main className={clsx(classes.content, classes.contentShift)}>
+          <div className={classes.toolbar} />
           {props.children}
+          <Start></Start>
         </main>
       </div>
       <Sidebar open={open} drawerWidth={drawerWidth} />
