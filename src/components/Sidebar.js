@@ -8,6 +8,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import RecentActorsOutlinedIcon from '@material-ui/icons/RecentActorsOutlined';
 import MenuOutlined from '@material-ui/icons/MenuOutlined';
+import CloseIcon from '@material-ui/icons/Close';
 import { Link } from '@reach/router';
 
 const drawerWidth = 240;
@@ -82,14 +83,21 @@ const Sidebar = props => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
-  /* const handleDrawerOpen = () => {
+  const handleDrawerOpen = () => {
     setOpen(true);
   };
 
   const handleDrawerClose = () => {
     setOpen(false);
-  }; */
+  };
 
+  const handleDrawer = () => {
+    if (open) {
+      handleDrawerClose();
+    } else {
+      handleDrawerOpen();
+    }
+  };
   return (
     <Drawer
       variant="permanent"
@@ -107,11 +115,10 @@ const Sidebar = props => {
     >
       <List>
         <Link to="/">
-          <ListItem button>
+          <ListItem button onClick={handleDrawer}>
             <ListItemIcon>
-              <MenuOutlined />
+              {open ? <CloseIcon /> : <MenuOutlined />}
             </ListItemIcon>
-            <ListItemText primary="Dashboard" />
           </ListItem>
         </Link>
         <Link to="/">
