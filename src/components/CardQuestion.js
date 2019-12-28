@@ -1,8 +1,9 @@
 import React from 'react';
 import { Card, CardContent } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
-
+import AnimationPlay from './AnimationPlay';
 import { makeStyles } from '@material-ui/core/';
+import manWebcam from '../assets/images/man-webcam(650x360).png';
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -21,7 +22,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     width: theme.spacing(80),
     height: theme.spacing(45),
-    backgroundColor: theme.palette.grey[300]
+    backgroundColor: '#868888' //theme.palette.grey[300]
   },
   number: {
     width: theme.spacing(10),
@@ -31,6 +32,11 @@ const useStyles = makeStyles(theme => ({
   title: {
     width: theme.spacing(74),
     textAlign: 'right'
+  },
+  img: {
+    zIndex: 20,
+    opacity: 0.8,
+    filter: 'brightness(0.5)'
   }
 }));
 
@@ -53,7 +59,10 @@ const CardQuestion = () => {
         </div>
       </div>
       <CardContent>
-        <div className={classes.video}>VIDEO</div>
+        <div className={classes.video}>
+          {/* <img src={manWebcam} className={classes.img} /> */}
+          <AnimationPlay />
+        </div>
       </CardContent>
     </Card>
   );
