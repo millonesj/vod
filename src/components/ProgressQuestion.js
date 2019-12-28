@@ -12,7 +12,8 @@ const useStyles = makeStyles(theme => ({
     padding: 4
   },
   progress: {
-    borderRadius: 25
+    borderRadius: 25,
+    height: theme.spacing(0.9)
   }
 }));
 
