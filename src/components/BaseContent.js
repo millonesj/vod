@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import ViewModuleIcon from '@material-ui/icons/ViewModule';
 import Button from '@material-ui/core/Button';
 import CardQuestion from './CardQuestion';
+import AnimationPlay from './AnimationPlay';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -70,6 +71,7 @@ const Toolbar = () => {
       </Grid>
       <Grid item xs={12} className={classes.content}>
         <CardQuestion />
+        <AnimationPlay></AnimationPlay>
       </Grid>
     </Grid>
   );
