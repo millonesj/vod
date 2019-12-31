@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(theme => ({
@@ -36,12 +36,31 @@ const useStyles = makeStyles(theme => ({
 
 const AnimationPlay = props => {
   const classes = useStyles();
+  const [radio, setRadio] = useState(50);
+  const [expading, setExpading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(function() {
+      if (radio <= 78 && expading) {
+        setRadio(radio + 1);
+        if (radio === 78) {
+          setExpading(false);
+        }
+      } else {
+        setRadio(radio - 1);
+        if (radio === 0) {
+          setExpading(true);
+        } else {
+        }
+      }
+    }, 30);
+  }, [setRadio, radio]);
   return (
     <div className={classes.root}>
       <svg width="160" height="160" class="svg">
         Iniciar
         <circle
-          id="circle-2"
+          id="big-circle"
           cx="50%"
           cy="50%"
           r="78"
@@ -51,10 +70,10 @@ const AnimationPlay = props => {
           /* classes.circle--2, */
         ></circle>
         <circle
-          id="circle-1"
+          id="animated-circle"
           cx="50%"
           cy="50%"
-          r="50"
+          r={radio}
           stroke="rgba(250,250,250,1)"
           stroke-width="4"
           className={(classes.circle, classes.transparent)}
