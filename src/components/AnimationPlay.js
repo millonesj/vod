@@ -46,15 +46,14 @@ const AnimationPlay = props => {
         if (radio === 78) {
           setExpading(false);
         }
+      } else if (radio === 0 && !expading) {
+        setRadio(radio + 1);
+        setExpading(true);
       } else {
         setRadio(radio - 1);
-        if (radio === 0) {
-          setExpading(true);
-        } else {
-        }
       }
-    }, 30);
-  }, [setRadio, radio]);
+    }, 80);
+  }, [setRadio, radio, expading]);
   return (
     <div className={classes.root}>
       <svg width="160" height="160" class="svg">
