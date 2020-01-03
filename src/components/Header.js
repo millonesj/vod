@@ -42,7 +42,7 @@ export default function Header() {
         <Toolbar className={classes.toolbar}>
           <img src={logo} alt="logo krowdy" />
           <div>
-            <Typography variant="title" color="textSecondary" noWrap>
+            <Typography variant="body2" color="textSecondary" noWrap>
               Walther Ayala
             </Typography>
             <IconButton color="default">
