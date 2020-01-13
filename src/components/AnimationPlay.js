@@ -1,21 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+const widthComponent = 250;
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: theme.spacing(20),
-    height: theme.spacing(20),
+    width: widthComponent,
+    height: widthComponent,
     display: 'flex',
     justifyContent: 'center',
+    flexDirection: 'flex-column',
     flexWrap: 'wrap'
-  },
-  circle: {
-    /* width: theme.spacing(20),
-    height: theme.spacing(20),
-    backgroundColor: 'rgba(250, 250, 250,0.2)',
-    borderRadius: '50%',
-    display: 'block',
-    border: '3px solid rgba(250, 250, 250,0.9)' */
   },
   growingCircle: {
     width: theme.spacing(10),
@@ -31,6 +26,12 @@ const useStyles = makeStyles(theme => ({
   textCircle: {
     fill: 'white',
     fontWeight: 'bold'
+  },
+  message: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    color: 'white'
   }
 }));
 
@@ -56,12 +57,12 @@ const AnimationPlay = props => {
   }, [setRadio, radio, expading]);
   return (
     <div className={classes.root}>
-      <svg width="160" height="160" class="svg">
+      <svg width={widthComponent} height="160" class="svg">
         Iniciar
         <circle
           id="big-circle"
           cx="50%"
-          cy="50%"
+          cy="80"
           r="78"
           stroke="rgba(250,250,250,0.7)"
           stroke-width="4"
@@ -71,7 +72,7 @@ const AnimationPlay = props => {
         <circle
           id="animated-circle"
           cx="50%"
-          cy="50%"
+          cy="80"
           r={radio}
           stroke="rgba(250,250,250,1)"
           stroke-width="4"
@@ -79,7 +80,7 @@ const AnimationPlay = props => {
         ></circle>
         <text
           x="50%"
-          y="50%"
+          y="80"
           dominant-baseline="middle"
           text-anchor="middle"
           className={classes.textCircle}
@@ -87,6 +88,9 @@ const AnimationPlay = props => {
           Iniciar
         </text>
       </svg>
+      <div className={classes.message}>
+        <Typography variant="subtitle2">{props.message}</Typography>
+      </div>
     </div>
   );
 };

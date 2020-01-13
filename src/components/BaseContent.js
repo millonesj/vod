@@ -71,7 +71,7 @@ const Toolbar = () => {
       </Grid>
       <Grid item xs={12} className={classes.content}>
         <CardQuestion />
-        <AnimationPlay></AnimationPlay>
+        <AnimationPlay message="Presion la barra espaciadora para empezar o paisar la grabación"></AnimationPlay>
       </Grid>
     </Grid>
   );
