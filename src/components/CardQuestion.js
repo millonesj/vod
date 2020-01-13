@@ -34,9 +34,14 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'right'
   },
   img: {
-    zIndex: 20,
     opacity: 0.8,
     filter: 'brightness(0.5)'
+  },
+  contentAnimation: {
+    position: 'absolute',
+    zIndex: '10',
+    top: '180px',
+    left: '31%'
   }
 }));
 
@@ -60,8 +65,10 @@ const CardQuestion = () => {
       </div>
       <CardContent>
         <div className={classes.video}>
-          {/* <img src={manWebcam} className={classes.img} /> */}
-          <AnimationPlay />
+          <img src={manWebcam} className={classes.img} />
+          <div className={classes.contentAnimation}>
+            <AnimationPlay message="Presion la barra espaciadora para empezar o paisar la grabación" />
+          </div>
         </div>
       </CardContent>
     </Card>

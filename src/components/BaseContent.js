@@ -29,9 +29,11 @@ const useStyles = makeStyles(theme => ({
     height: '30%'
   },
   content: {
-    backgroundColor: '#F00',
+    backgroundColor: '#F5F5F5',
     display: 'flex',
-    width: '100%'
+    justifyContent: 'center',
+    width: '100%',
+    position: 'relative'
   },
   showQuestions: {
     display: 'flex',
@@ -43,6 +45,10 @@ const useStyles = makeStyles(theme => ({
     minWidth: theme.spacing(5),
     minHeight: theme.spacing(5),
     marginLeft: theme.spacing(2)
+  },
+  cardQuestion: {
+    position: 'absolute',
+    top: '-120px'
   }
 }));
 
@@ -70,8 +76,9 @@ const Toolbar = () => {
         </div>
       </Grid>
       <Grid item xs={12} className={classes.content}>
-        <CardQuestion />
-        <AnimationPlay message="Presion la barra espaciadora para empezar o paisar la grabación"></AnimationPlay>
+        <div className={classes.cardQuestion}>
+          <CardQuestion />
+        </div>
       </Grid>
     </Grid>
   );
