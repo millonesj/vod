@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     border: '3px solid rgba(250, 250, 250,0.9)'
   },
   transparent: {
-    fill: 'rgba(250, 250, 250, 0.3)'
+    fill: 'rgba(250, 250, 250, 0.2)'
   },
   textCircle: {
     fill: 'white',
